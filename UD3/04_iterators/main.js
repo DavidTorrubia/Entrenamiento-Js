@@ -29,30 +29,43 @@ var pilots = [
   }
 ];
 
-function iterateSimple() {
+function iterateSimple(pilots) {
+  for (var i = 0; i < pilots.length; i++) {
+    console.log("Name: " + pilots[i].name + " | Faction: " + pilots[i].faction + " | Years: " + pilots[i].years)
+  }
 }
-function iterateForEach() {
+function iterateForEach(pilots) {
+  pilots.forEach(element => {  console.log("Name: " + element.name + " | Faction: " + element.faction + " | Years: " + element.years)});
 }
-function mapIds() {
+function mapIds(pilots) {
+  return pilots.map(x => x.id)
 }
-function rebels() {
+function rebels(pilots) {
+  return pilots.filter( x => x.faction === "Rebels")
 }
-function totalFaction(faction) {
+function totalFaction(faction, pilots) {
+  return pilots.filter(x => x.faction === faction).length
 }
-function avgYears(faction) {
+function avgYears(faction, pilots) {
+  return pilots
+    .filter(x => x.faction === faction)
+    .reduce((a, b) => a + b.years, 0) 
+    / pilots.filter(x => x.faction === faction).length
 }
-
 // use console.log
-iterateSimple()
-iterateForEach()
+iterateSimple(pilots)
+iterateForEach(pilots)
 try {
-  assert.deepStrictEqual(mapIds(), [2,8,40,66])
-  assert.deepStrictEqual(rebels(), [pilots[0], pilots[3]])
-
-  assert.deepStrictEqual(totalFaction('Rebels'), 2)
-
-  assert.deepStrictEqual(avgYears('Rebels'), 22.5)
-  assert.deepStrictEqual(avgYears('Empire'), 25)
+  assert.deepStrictEqual(mapIds(pilots), [2,8,40,66])
+  console.log("Prueba 1 - completada")
+  assert.deepStrictEqual(rebels(pilots), [pilots[0], pilots[3]])
+  console.log("Prueba 2 - completada")
+  assert.deepStrictEqual(totalFaction('Rebels', pilots), 2)
+  console.log("Prueba 3 - completada")
+  assert.deepStrictEqual(avgYears('Rebels', pilots), 22.5)
+  console.log("Prueba 4 - completada")
+  assert.deepStrictEqual(avgYears('Empire', pilots), 25)
+  console.log("Prueba 5 - completada")
 } catch (error) {
   console.error(error)
 }
