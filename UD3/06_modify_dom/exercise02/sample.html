@@ -5,13 +5,21 @@
 <script type="text/javascript">
 window.onload = function() {
 	// Numero de enlaces de la pagina
-
+	console.log("Numero de enlaces Totales: " + document.links.length)
 	// Direccion del penultimo enlace
-
+	console.log(document.getElementsByTagName("a")[document.getElementsByTagName("a").length - 2 ].href)
 	// Numero de enlaces que apuntan a http://prueba
-
+	let count = 0;
+	let items = document.getElementsByTagName("a")
+	for (i = 0; i < items.length ; i++ ){
+		if (items[i] == ("http://prueba/")){
+			count ++;
+		}
+	}
+	console.log("Enlaces que puntan a prueba: " + count)
 	// Numero de enlaces del tercer párrafo
-
+	parrafos = document.getElementsByTagName("p");
+	console.log("num enlaces tercer parrafo: " + parrafos[2].getElementsByTagName("a").length);
 }
 </script>
 </head>
