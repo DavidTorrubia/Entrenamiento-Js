@@ -20,6 +20,16 @@ window.onload = function() {
 	// Numero de enlaces del tercer párrafo
 	parrafos = document.getElementsByTagName("p");
 	console.log("num enlaces tercer parrafo: " + parrafos[2].getElementsByTagName("a").length);
+
+	let aDiv = document.createElement('div')
+	let aPArragraph = document.createElement('p')
+
+	aDiv.classList = 'ejemplo'
+	aPArragraph.innerText = 'soy un texto'
+
+	aDiv.appendChild(aPArragraph)
+
+	document.getElementsByTagName("p")[2].appendChild(aDiv);
 }
 </script>
 </head>
