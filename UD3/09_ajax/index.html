@@ -5,8 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./main.js"></script>
+    <style>
+        table {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+         td, th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+         tr:nth-child(even){background-color: #f2f2f2;}
+        
+         tr:hover {background-color: #ddd;}
+        
+         th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
+        </style>
 </head>
 <body>
-    
+    <button onclick="recharge()"> Recargar
+    </button>
+    <table id="Tabla" style="border: 1px solid black; box-shadow: 2px 2px 5px black;">
+        <tr style="border-bottom: 2px solid black;">
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Age</th>
+        </tr>
+    </table>
 </body>
 </html>
