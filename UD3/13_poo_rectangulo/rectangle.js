@@ -21,7 +21,10 @@ class Rectangle {
 
     // overlay
     isOverlay(rect){
-        if (this.topLeft.x == this.bottomRight.x || this.topLeft.y == this.bottomRight.y || rect.topLeft.x == rect.bottomRight.x || rect.topLeft.y == rect.bottomRight.y){
+        if (this.topLeft.x == this.bottomRight.x 
+            || this.topLeft.y == this.bottomRight.y 
+            || rect.topLeft.x == rect.bottomRight.x 
+            || rect.topLeft.y == rect.bottomRight.y){
             return false;
         }
         if (this.topLeft.x > rect.bottomRight.x || rect.topLeft.x > this.bottomRight.x) {

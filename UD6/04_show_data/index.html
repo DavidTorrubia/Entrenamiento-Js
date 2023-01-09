@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-</head>
-<body>
-  <main>
-    Sample vuejs application
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <style>
+    body{
+      margin: 0 0 0 0;
+      padding-left: 1rem;
+    }
+    h1{
+      margin: 10px 10px 10px 10px;
+    }
+  </style>
+  <body>
+    <main>
+      <div id="app">
+        <div style="display: flex; flex-direction: row">
+          <h1>Nombre:</h1>
+          <h1 style="font-weight: 100;">{{nombre}}</h1>
+        </div>
+        <div style="display: flex; flex-direction: row">
+          <h1>Apellidos:</h1>
+          <h1 style="font-weight: 100;">{{apellido}}</h1>
+        </div>
+        <div style="display: flex; flex-direction: row">
+          <h1>Puntuacion:</h1>
+          <h1 style="font-weight: 100;">{{puntuacion}}</h1>
+        </div>
+        <div style="display: flex; flex-direction: row">
+          <h1>Puesto:</h1>
+          <h1 style="font-weight: 100;">#{{puesto}}</h1>
+        </div>
+      </div>
+    </main>
 
-    <div id="app">
-      {{ message }}
-    </div>
-  </main>
-
-  <script>
-    let app = new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue!!'
-      }
-    })
-  </script>
-</body>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          nombre: "David",
+          apellido: "Torrubia Santos",
+          puntuacion: "100000",
+          puesto: "1",
+        },
+      });
+    </script>
+  </body>
 </html>
